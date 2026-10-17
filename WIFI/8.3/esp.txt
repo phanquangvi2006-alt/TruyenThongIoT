@@ -1,0 +1,37 @@
+# Board: ESP32-S3 DevKitC-1 (Espressif)
+# Definition: definitions/boards/esp32-s3-devkitc-1/manifest.yaml
+
+esphome:
+  name: template
+  friendly_name: template
+
+esp32:
+  variant: esp32s3
+  flash_size: 8MB
+  framework:
+    type: esp-idf
+
+logger:
+
+api:
+  encryption:
+    key: "TzEw8zeO5FHJR/hfOn8b38JUedg4Tcz3NJvsSXDG2Ew="
+
+ota:
+  - platform: esphome
+
+wifi:
+  ssid: "wind"
+  password: windphan59
+  ap:
+    ssid: wind
+    password: windphan59
+
+captive_portal:
+web_server:
+  port: 80
+sensor: 
+  - platform: internal_temperature 
+    name: "template"
+    id: esp32_cpu_temp
+    update_interval: 5s
